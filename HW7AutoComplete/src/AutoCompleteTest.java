@@ -7,13 +7,13 @@ import org.junit.Test;
 
 public class AutoCompleteTest {
 	
-	///we'll test the algorithm with two different dictionaries
+	//we'll test the algorithm with two different dictionaries
 	String[] dictionary = 
 			
 			{"hello", "high", "seattle", "seatac", "see", "hollow", "how", "legit", "luigi"}
 
 	;
-//
+
 	@Test
 	public void testAutoComplete() {
 		
@@ -40,5 +40,5 @@ public class AutoCompleteTest {
 		}
 		
 	}
-	//
+	
 }

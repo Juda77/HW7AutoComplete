@@ -11,7 +11,7 @@ public class Trie {
 		
 		TrieNode curr = head;
 		
-		/*/
+		/*
 		 * for each letter in the word, add to the children of the current node
 		 * iteration strat is somewhat similar to linked list traversal
 		 */
