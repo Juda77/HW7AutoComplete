@@ -19,14 +19,15 @@ public class AutoCompleteTest {
 	@Test
 	public void testAutoComplete() {
 		
-		String[] inputs = {"h", "se", "sea", "ho", "xyz"};
+		String[] inputs = {"h", "se", "sea", "ho", "xyz", "hello"};
 		String[][] expected = {
 				
 				{"hello", "high", "hollow", "how"},
-				{"seattle", "see"},
+				{"seattle", "seatac", "see"},
 				{"seattle", "seatac"},
-				{"how"},
-				{}
+				{"hollow", "how"},
+				{},
+				{"hello"}
 						
 		};
 		
@@ -36,14 +37,7 @@ public class AutoCompleteTest {
 		}
 		
 		
-		
-		
-		
-		
 	}
-	
-	
-	
 	
 	
 }

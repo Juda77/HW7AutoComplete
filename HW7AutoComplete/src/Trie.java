@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Trie {
 	TrieNode head = new TrieNode();
@@ -23,6 +24,7 @@ public class Trie {
 				//if at last letter, set boolean 'atEndOfWord' to true
 				curr.addLetterToChildren(letter, true);
 			} else {
+
 				curr.addLetterToChildren(letter, false);
 			}
 			 
@@ -30,8 +32,9 @@ public class Trie {
 			
 		}
 		
-		
 	}
+	
+	
 	
 	
 

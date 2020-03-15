@@ -23,13 +23,17 @@ public class TrieNode {
 		this.letter = letter;
 	}
 	
-	public void addLetterToChildren(char Letter, boolean atEndOfWord) {
-		
+	public void addLetterToChildren(char letter, boolean atEndOfWord) {
+
 		//insert a trienode into the children array
 		int index = (int)letter - 97;
-		indexesOfChildren.add(index);
-		TrieNode child = new TrieNode(letter, atEndOfWord);
-		children[index] = child;
+		
+		//make sure the spot isn't already occupied before we add another letternode to it
+		if (children[index] == null) {
+			indexesOfChildren.add(index);
+			TrieNode child = new TrieNode(letter, atEndOfWord);
+			children[index] = child;
+		}
 		
 	}
 	
