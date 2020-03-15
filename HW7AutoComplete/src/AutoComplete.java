@@ -4,7 +4,6 @@ import java.util.List;
 
 public class AutoComplete {
 	
-	///we'll test the algorithm with two different dictionaries
 	String[] dictionary;
 	
 	Trie trieDict = new Trie();
@@ -19,7 +18,7 @@ public class AutoComplete {
 		for (int i = 0; i < dictionary.length; i++) {
 			trieDict.add(dictionary[i].toLowerCase());
 		}
-				
+				//
 	}
 
 	public List<String> generateWords(String input) {

@@ -7,7 +7,7 @@ public class TrieNode {
 	TrieNode[] children = new TrieNode[26];
 	boolean atEndOfWord;
 	
-	/*/
+	/*//
 	 * each trie node contains an instance variable array of trienodes
 	 */
 	public TrieNode(char letter, boolean atEndOfWord) {
