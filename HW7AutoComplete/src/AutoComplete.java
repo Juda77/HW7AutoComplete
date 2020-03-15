@@ -4,7 +4,7 @@ import java.util.List;
 
 public class AutoComplete {
 	
-	//we'll test the algorithm with two different dictionaries
+	///we'll test the algorithm with two different dictionaries
 	String[] dictionary;
 	
 	Trie trieDict = new Trie();
@@ -54,7 +54,7 @@ public class AutoComplete {
 		return result; //placeholder 
 	}
 
-	//breadth-first traversal
+	//depth-first traversal
 	public void generateWords(List<String> result, TrieNode curr, String letters) {
 
 		//access each child of the current TrieNode
