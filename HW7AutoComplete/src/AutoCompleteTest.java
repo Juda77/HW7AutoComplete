@@ -8,18 +8,16 @@ import org.junit.Test;
 public class AutoCompleteTest {
 	
 	//we'll test the algorithm with two different dictionaries
-	String[][] dictionaries = {
+	String[] dictionary = 
 			
-			{"hello", "high", "seattle", "seatac", "see", "hollow", "how"}
-			
-	};
-	
-	
+			{"hello", "high", "seattle", "seatac", "see", "hollow", "how", "legit", "luigi"}
+
+	;
 
 	@Test
 	public void testAutoComplete() {
 		
-		String[] inputs = {"h", "se", "sea", "ho", "xyz", "hello"};
+		String[] inputs = {"h", "se", "sea", "ho", "xyz", "hello", "legit", "l"};
 		String[][] expected = {
 				
 				{"hello", "high", "hollow", "how"},
@@ -27,17 +25,20 @@ public class AutoCompleteTest {
 				{"seattle", "seatac"},
 				{"hollow", "how"},
 				{},
-				{"hello"}
+				{"hello"},
+				{"legit"},
+				{"legit", "luigi"}
 						
 		};
 		
+		AutoComplete google = new AutoComplete();
+		google.setDictionary(dictionary);
+		
 		for (int i = 0; i < expected.length; i++) {
 			List<String> currentExpected = Arrays.asList(expected[i]);
-			assertTrue(currentExpected.equals(AutoComplete.generateWords(inputs[i])));
+			assertTrue(currentExpected.equals(google.generateWords(inputs[i])));
 		}
 		
-		
 	}
-	
 	
 }

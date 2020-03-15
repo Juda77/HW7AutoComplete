@@ -5,19 +5,15 @@ import java.util.List;
 public class AutoComplete {
 	
 	//we'll test the algorithm with two different dictionaries
-	static String[][] dictionaries = {
-				
-			{"hello", "high", "seattle", "seatac", "see", "hollow", "how"}
-			
-	};
+	String[] dictionary;
 	
-	static Trie trieDict = new Trie();
+	Trie trieDict = new Trie();
 	
+	public void setDictionary(String[] dictionary) {
+		this.dictionary = dictionary;
+	}
 	
-	
-	
-	
-	public static void constructTrieDictionary(String[] dictionary) {
+	public void constructTrieDictionary(String[] dictionary) {
 		
 		//iterate through all words and add them to the trie dictionary
 		for (int i = 0; i < dictionary.length; i++) {
@@ -25,19 +21,17 @@ public class AutoComplete {
 		}
 				
 	}
-	
 
-	public static List<String> generateWords(String input) {
+	public List<String> generateWords(String input) {
 		
 		if (input.length() == 0) {
 			return new ArrayList<String>();
 		}
 		
-		constructTrieDictionary(dictionaries[0]);
+		constructTrieDictionary(dictionary);
 		List<String> result = new ArrayList<String>();
 		TrieNode curr = trieDict.head;
 		String letters = input.substring(0, input.length() - 1);
-		
 		
 		//before we do the recursive search, let's iterate through the part of the trie that is the input
 		for (int i = 0; i < input.length(); i++) {	
@@ -55,49 +49,30 @@ public class AutoComplete {
 			
 		}
 		
-		
 		generateWords(result, curr, letters);
-		
-		
+			
 		return result; //placeholder 
 	}
-	
-	
 
 	//breadth-first traversal
-	public static void generateWords(List<String> result, TrieNode curr, String letters) {
+	public void generateWords(List<String> result, TrieNode curr, String letters) {
 
 		//access each child of the current TrieNode
 		letters += curr.letter;
 
 		if (curr.atEndOfWord == true) {
-			System.out.println(letters);
 			result.add(letters);
 		}
 		
 		for (int i = 0; i < curr.indexesOfChildren.size(); i++) {
 			
 			TrieNode currentChild = curr.children[curr.indexesOfChildren.get(i)];
-			
-			
-			
+	
 			//recurse further down the current letter
 			generateWords(result, currentChild, letters);
 			
-		}
-		
-		
-		
+		}	
 		
 	}
-
-	
-
-
-
-	
-	
-	
-	
 
 }

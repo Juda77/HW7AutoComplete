@@ -3,7 +3,6 @@ import java.util.Arrays;
 public class Trie {
 	TrieNode head = new TrieNode();
 	
-	
 	public void add(String word) {
 		
 		if (word.length() == 0) {
@@ -33,9 +32,5 @@ public class Trie {
 		}
 		
 	}
-	
-	
-	
-	
 
 }
